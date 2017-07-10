@@ -69,5 +69,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: __GITHUB__TOKEN__@github.com:ileenhow/ileenhow.github.io.git
+  repo: https://__GITHUB_TOKEN__@github.com/ileenhow/ileenhow.github.io.git
   branch: master
