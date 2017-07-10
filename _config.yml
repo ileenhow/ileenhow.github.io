@@ -63,11 +63,12 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: apollo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
+  # repo: git@github.com:ileenhow/ileenhow.github.io.git
   repo: https://__GITHUB_TOKEN__@github.com/ileenhow/ileenhow.github.io.git
   branch: master
