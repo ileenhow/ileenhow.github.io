@@ -3,16 +3,15 @@ node_js:
 - 7.2.0
 branches:
   only:
-  - master
-before_install:
+  - dev
+
+install:
 - npm install -g hexo-cli
-script:
-- hexo generate
-after_success:
+- npm install
+
+before_script:
 - git config --global user.name "ileenhow"
 - git config --global user.email "ileenhow@gmail.com"
-- sed -i'' "/^ *repo/s~github\.com~${GH_TOKEN}@github.com~" _config.yml
-- hexo deploy --silent
-env:
-  global:
-    secure: Uy2Vqjz1rtOM00v/heDZv/yw+yuFQn4MZEREZ50z5fnEbcnAsfrAa99mBurIdX2wQeWcwX2HmZuUDnUr7ieOgEhjgD+kpi8EOQw0eYFqz+5nfcPX2dJLkJbJX8Ir5Y6sFP30mr4RBIGT9+w9i/kZtKfxWUSOujyNbGgMCK2bfycWI9GBoU1J0l4QY7vyMUivy7MwF2rXw9JYCUY7mZ0ehTfN5O/2/baKg92QQaNUWL/RHjgsNnJfrsnbI5FVfaTb5YIeEYqBI18x4NJVl/8dDv6q6eWBGnUGN4k40CmpimUYxZZI2OOSfxEDJARIcql+gV/kvBGSlGNHOcLjSFOsALKUTHQrJHJokjOQ51vNMWKCvQMU0D/FSYf6bL8KGNMuo+H29rkr+3TRk3Ysf/O1axGeh7FPROGDyzLYnYlohEbSEnj+yivR/0zqNrrQhoUrh/Zpx+KgaUmqurR3waW+LzeGghcdPJXAP+jfd+7wd8r8BU71g54j2WwxXUQvcMfLAxhnTTf5Z1zZOOL3dLoLkwpY3OCfBOee3dUcTr9vMRydyKlWexhZ+w2ZSahmDduW2o299H74OtNM9m3GCQPfllEiVyxai5yFNs2XZcamFWDfL/BofgvzSb2i54q0UTOVVFhlC04Qb65AHBOFGp8hHZrJVmcg3MwubNfnLCNP44k=
+- sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
+
+script: npm run build
